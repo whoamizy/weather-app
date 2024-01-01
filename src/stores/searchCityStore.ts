@@ -10,6 +10,10 @@ export const useSearchCityStore = defineStore('search-city', () => {
 
   const getCities = async (searchVal: string) => {
     try {
+      if (!searchVal.length) {
+        cities.value = []
+        return
+      }
       isLoading.value = true
       const { data } = await axios.get(
         `https://api.weatherapi.com/v1/search.json?key=${env.API_KEY}&q=${searchVal}`
