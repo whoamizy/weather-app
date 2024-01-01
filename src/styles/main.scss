@@ -13,3 +13,12 @@ body {
   font-size: 14px;
   color: var(--text-primary);
 }
+
+input {
+  display: block;
+  border: none;
+  outline: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
