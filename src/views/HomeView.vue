@@ -2,17 +2,32 @@
   <HomeHeader />
   <div class="content">
     <HomeWelcome />
-    <BaseInput v-model:value.trim="searchVal" placeholder="Search location" :is-loading="true" />
+    <BaseInput
+      v-model:value.trim="searchValue"
+      placeholder="Search location"
+      :is-loading="searchCityStore.isLoading"
+    />
+    <SearchCityList v-if="searchCityStore.cities.length" :cities="searchCityStore.cities" />
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref, watch } from 'vue'
+import { useDebounce } from '@vueuse/core'
 import BaseInput from '@/components/BaseInput.vue'
 import HomeHeader from '@/components/HomeHeader.vue'
 import HomeWelcome from '@/components/HomeWelcome.vue'
-import { ref } from 'vue'
+import SearchCityList from '@/components/SearchCityList.vue'
+import { useSearchCityStore } from '@/stores/searchCityStore'
 
-const searchVal = ref('')
+const searchCityStore = useSearchCityStore()
+
+const searchValue = ref('')
+const debouncedSearchValue = useDebounce(searchValue, 500)
+
+watch(debouncedSearchValue, () => {
+  searchCityStore.getCities(debouncedSearchValue.value)
+})
 </script>
 
 <style lang="scss" scoped>
