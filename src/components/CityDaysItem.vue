@@ -60,4 +60,10 @@ defineProps({
     color: var(--text-secondary);
   }
 }
+
+@media (max-width: 480px) {
+  .day {
+    padding: 20px;
+  }
+}
 </style>

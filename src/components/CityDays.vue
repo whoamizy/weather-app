@@ -11,8 +11,8 @@
 
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import BaseCard from './BaseCard.vue'
-import CityDaysItem from './CityDaysItem.vue'
+import BaseCard from '@/components/BaseCard.vue'
+import CityDaysItem from '@/components/CityDaysItem.vue'
 import type { ForecastDay } from '@/types'
 
 defineProps({
@@ -34,6 +34,24 @@ defineProps({
   }
   &__list {
     display: flex;
+  }
+}
+
+@media (max-width: 980px) {
+  .days {
+    &__list {
+      flex-wrap: wrap;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .days {
+    &__title {
+      display: none;
+    }
+    &__list {
+      flex-direction: column;
+    }
   }
 }
 </style>

@@ -1,6 +1,6 @@
-import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import axios from 'axios'
+import { defineStore } from 'pinia'
 import { env } from '@/utils'
 import type { SearchCity } from '@/types'
 

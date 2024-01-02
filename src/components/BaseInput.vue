@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import BaseLoader from './BaseLoader.vue'
+import BaseLoader from '@/components/BaseLoader.vue'
 
 defineProps({
   value: {
@@ -66,5 +66,16 @@ const updateValue = (e: Event) => {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+}
+
+@media (max-width: 480px) {
+  .input {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  .loader {
+    width: 24px;
+    height: 24px;
+  }
 }
 </style>

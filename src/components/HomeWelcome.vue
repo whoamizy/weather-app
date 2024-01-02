@@ -22,4 +22,17 @@
     color: var(--text-accent);
   }
 }
+
+@media (max-width: 480px) {
+  .welcome {
+    margin-bottom: 36px;
+    &__title {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+    &__description {
+      font-size: 14px;
+    }
+  }
+}
 </style>

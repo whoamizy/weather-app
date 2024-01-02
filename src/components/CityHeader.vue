@@ -32,4 +32,13 @@ const navigateToBack = () => {
     }
   }
 }
+
+@media (max-width: 480px) {
+  .city-header {
+    &__button {
+      padding: 12px 16px;
+      font-size: 14px;
+    }
+  }
+}
 </style>

@@ -1,8 +1,6 @@
 <template>
   <header class="header">
-    <RouterLink to="/">
-      <img src="/logo.svg" alt="logo" />
-    </RouterLink>
+    <img src="/logo.svg" alt="logo" />
   </header>
 </template>
 
@@ -12,5 +10,11 @@
   align-items: center;
   justify-content: center;
   padding: 40px 0;
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 20px 0;
+  }
 }
 </style>

@@ -1,9 +1,9 @@
-import type { City } from '@/types'
-import { env } from '@/utils'
+import { ref } from 'vue'
 import axios from 'axios'
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { env } from '@/utils'
+import type { City } from '@/types'
 
 export const useCityStore = defineStore('city', () => {
   const router = useRouter()
