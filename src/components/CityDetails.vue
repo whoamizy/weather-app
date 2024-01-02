@@ -126,4 +126,36 @@ defineProps({
     font-size: 24px;
   }
 }
+@media (max-width: 767px) {
+  .details {
+    &__title {
+      display: none;
+    }
+    &__line {
+      padding: 16px 0;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .details {
+    padding: 0;
+    &__icon {
+      width: 30px;
+      height: 30px;
+    }
+    &__icon_main {
+      width: 50px;
+      height: 50px;
+    }
+    &__key {
+      &_status {
+        font-size: 16px;
+      }
+    }
+    &__value {
+      font-size: 18px;
+    }
+  }
+}
 </style>

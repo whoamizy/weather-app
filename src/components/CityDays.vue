@@ -36,4 +36,22 @@ defineProps({
     display: flex;
   }
 }
+
+@media (max-width: 980px) {
+  .days {
+    &__list {
+      flex-wrap: wrap;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .days {
+    &__title {
+      display: none;
+    }
+    &__list {
+      flex-direction: column;
+    }
+  }
+}
 </style>

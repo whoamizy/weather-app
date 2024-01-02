@@ -22,4 +22,11 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 480px) {
+  .base-loader {
+    width: 24px;
+    height: 24px;
+  }
+}
 </style>

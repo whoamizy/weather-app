@@ -43,8 +43,6 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .wrapper {
-  width: 100vw;
-  height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
@@ -52,8 +50,20 @@ onMounted(() => {
 }
 .details {
   display: grid;
-  grid-template-columns: 1;
+  grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 4fr 3fr;
   gap: 16px;
+}
+
+@media (max-width: 1480px) {
+  .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .details {
+    grid-template-rows: auto;
+  }
 }
 </style>

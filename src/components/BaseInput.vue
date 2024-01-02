@@ -73,5 +73,9 @@ const updateValue = (e: Event) => {
     padding: 12px 16px;
     font-size: 14px;
   }
+  .loader {
+    width: 24px;
+    height: 24px;
+  }
 }
 </style>

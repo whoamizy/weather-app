@@ -127,4 +127,51 @@ const daytimeIcon = props.isDay ? 'day-icon.svg' : 'night-icon.svg'
     height: 248px;
   }
 }
+
+@media (max-width: 767px) {
+  .main-info {
+    &__city {
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+    &__date {
+      font-size: 16px;
+    }
+    &__time {
+      font-size: 28px;
+    }
+    &__temp {
+      font-size: 62px;
+    }
+    &__icon {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .main-info {
+    &__plate {
+      padding: 20px;
+    }
+    &__city {
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+    &__date {
+      font-size: 14px;
+    }
+    &__time {
+      font-size: 16px;
+    }
+    &__temp {
+      font-size: 48px;
+    }
+    &__icon {
+      width: 90px;
+      height: 90px;
+    }
+  }
+}
 </style>
