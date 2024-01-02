@@ -42,8 +42,8 @@
 </template>
 
 <script setup lang="ts">
-import BaseCard from './BaseCard.vue'
-import CityHeader from './CityHeader.vue'
+import BaseCard from '@/components/BaseCard.vue'
+import CityHeader from '@/components/CityHeader.vue'
 
 const props = defineProps({
   name: {

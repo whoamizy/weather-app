@@ -44,7 +44,7 @@
 
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import BaseCard from './BaseCard.vue'
+import BaseCard from '@/components/BaseCard.vue'
 import type { Condition } from '@/types'
 
 defineProps({

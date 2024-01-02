@@ -11,8 +11,8 @@
 
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import BaseCard from './BaseCard.vue'
-import CityDaysItem from './CityDaysItem.vue'
+import BaseCard from '@/components/BaseCard.vue'
+import CityDaysItem from '@/components/CityDaysItem.vue'
 import type { ForecastDay } from '@/types'
 
 defineProps({
