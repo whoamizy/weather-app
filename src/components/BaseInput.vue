@@ -67,4 +67,11 @@ const updateValue = (e: Event) => {
   transform: translateY(-50%);
   z-index: 10;
 }
+
+@media (max-width: 480px) {
+  .input {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+}
 </style>

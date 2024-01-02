@@ -38,4 +38,11 @@ const navigateToCity = (cityName: string) => {
     background-color: var(--city-list-item-bg-color-light);
   }
 }
+
+@media (max-width: 480px) {
+  .item {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+}
 </style>
