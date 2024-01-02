@@ -7,7 +7,9 @@
       placeholder="Search location"
       :is-loading="searchCityStore.isLoading"
     />
-    <SearchCityList v-if="searchCityStore.cities.length" :cities="searchCityStore.cities" />
+    <Transition name="list">
+      <SearchCityList v-if="searchCityStore.cities.length" :cities="searchCityStore.cities" />
+    </Transition>
   </div>
 </template>
 
