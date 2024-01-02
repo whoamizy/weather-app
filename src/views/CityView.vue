@@ -18,7 +18,7 @@
         :humidity="cityStore.city.current.humidity"
         :uv="cityStore.city.current.uv"
       />
-      <CityDays />
+      <CityDays v-if="cityStore.city" :days="cityStore.city.forecast.forecastday" />
     </div>
   </div>
 </template>

@@ -33,7 +33,7 @@ export interface Condition {
   icon: string
 }
 
-interface ForecastDay {
+export interface ForecastDay {
   date: string
   day: {
     maxtemp_c: number
