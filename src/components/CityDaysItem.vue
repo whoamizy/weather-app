@@ -11,15 +11,13 @@
 </template>
 
 <script setup lang="ts">
-import type { PropType } from 'vue'
 import type { ForecastDay } from '@/types'
 
-defineProps({
-  day: {
-    type: Object as PropType<ForecastDay>,
-    required: true
-  }
-})
+interface Props {
+  day: ForecastDay
+}
+
+defineProps<Props>()
 </script>
 
 <style lang="scss" scoped>

@@ -16,20 +16,13 @@
 <script setup lang="ts">
 import BaseLoader from '@/components/BaseLoader.vue'
 
-defineProps({
-  value: {
-    type: String,
-    required: true
-  },
-  placeholder: {
-    type: String,
-    default: ''
-  },
-  isLoading: {
-    type: Boolean,
-    default: false
-  }
-})
+interface Props {
+  value: string
+  placeholder?: string
+  isLoading?: boolean
+}
+
+defineProps<Props>()
 
 const emit = defineEmits(['update:value'])
 

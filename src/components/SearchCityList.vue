@@ -5,16 +5,14 @@
 </template>
 
 <script setup lang="ts">
-import type { PropType } from 'vue'
 import type { SearchCity } from '@/types'
 import SearchCityListItem from '@/components/SearchCityListItem.vue'
 
-defineProps({
-  cities: {
-    required: true,
-    type: Array as PropType<SearchCity[]>
-  }
-})
+interface Props {
+  cities: SearchCity[]
+}
+
+defineProps<Props>()
 </script>
 
 <style lang="scss" scoped>

@@ -45,31 +45,18 @@
 import BaseCard from '@/components/BaseCard.vue'
 import CityHeader from '@/components/CityHeader.vue'
 
-const props = defineProps({
-  name: {
-    type: String,
-    required: true
-  },
-  country: {
-    type: String,
-    required: true
-  },
-  localtime: {
-    type: String,
-    required: true
-  },
-  temp: {
-    type: Number,
-    required: true
-  },
-  isDay: {
-    type: Number,
-    required: true
-  }
-})
+interface Props {
+  name: string
+  country: string
+  localtime: string
+  temp: number
+  isDay: number
+}
 
-const daytimeBackground = props.isDay ? 'day.png' : 'night.png'
-const daytimeIcon = props.isDay ? 'day-icon.svg' : 'night-icon.svg'
+const { isDay } = defineProps<Props>()
+
+const daytimeBackground = isDay ? 'day.png' : 'night.png'
+const daytimeIcon = isDay ? 'day-icon.svg' : 'night-icon.svg'
 </script>
 
 <style lang="scss" scoped>
