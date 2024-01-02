@@ -2,13 +2,24 @@
   <ViewLoader v-if="cityStore.isLoading" />
   <div class="wrapper" v-else>
     <CityMainInfo
-      :name="cityStore.city?.location.name"
-      :country="cityStore.city?.location.country"
-      :localtime="cityStore.city?.location.localtime"
-      :temp="cityStore.city?.current.temp_c"
-      :is-day="cityStore.city?.current.is_day"
+      v-if="cityStore.city"
+      :name="cityStore.city.location.name"
+      :country="cityStore.city.location.country"
+      :localtime="cityStore.city.location.localtime"
+      :temp="cityStore.city.current.temp_c"
+      :is-day="cityStore.city.current.is_day"
     />
-    <div>City {{ cityName }}</div>
+    <div class="details">
+      <CityDetails
+        v-if="cityStore.city"
+        :condition="cityStore.city.current.condition"
+        :feelslike="cityStore.city.current.feelslike_c"
+        :windspeed="cityStore.city.current.wind_kph"
+        :humidity="cityStore.city.current.humidity"
+        :uv="cityStore.city.current.uv"
+      />
+      <CityDays />
+    </div>
   </div>
 </template>
 
@@ -18,6 +29,8 @@ import { useRoute } from 'vue-router'
 import { useCityStore } from '@/stores/cityStore'
 import ViewLoader from '@/components/ViewLoader.vue'
 import CityMainInfo from '@/components/CityMainInfo.vue'
+import CityDetails from '@/components/CityDetails.vue'
+import CityDays from '@/components/CityDays.vue'
 
 const route = useRoute()
 const { name: cityName } = route.params
@@ -36,5 +49,11 @@ onMounted(() => {
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   padding: 24px;
+}
+.details {
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 4fr 3fr;
+  gap: 16px;
 }
 </style>

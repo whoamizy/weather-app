@@ -28,7 +28,7 @@ interface Current {
   uv: number
 }
 
-interface Condition {
+export interface Condition {
   text: string
   icon: string
 }

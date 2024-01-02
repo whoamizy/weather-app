@@ -45,23 +45,23 @@ import CityHeader from './CityHeader.vue'
 const props = defineProps({
   name: {
     type: String,
-    default: ''
+    required: true
   },
   country: {
     type: String,
-    default: ''
+    required: true
   },
   localtime: {
     type: String,
-    default: ''
+    required: true
   },
   temp: {
     type: Number,
-    default: 0
+    required: true
   },
   isDay: {
     type: Number,
-    default: 0
+    required: true
   }
 })
 

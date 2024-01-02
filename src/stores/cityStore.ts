@@ -15,7 +15,7 @@ export const useCityStore = defineStore('city', () => {
     try {
       isLoading.value = true
       const { data } = await axios.get(
-        `http://api.weatherapi.com/v1/forecast.json?key=${env.API_KEY}&q=${cityName}&days=5&aqi=no&alerts=no`
+        `https://api.weatherapi.com/v1/forecast.json?key=${env.API_KEY}&q=${cityName}&days=5&aqi=no&alerts=no`
       )
 
       city.value = data
