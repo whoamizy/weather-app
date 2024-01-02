@@ -2,7 +2,10 @@
   <BaseCard>
     <div class="main-info">
       <CityHeader />
-      <div class="main-info__plate" :style="{ backgroundImage: `url('/daytime/${bgImage}')` }">
+      <div
+        class="main-info__plate"
+        :style="{ backgroundImage: `url('/daytime/${daytimeBackground}')` }"
+      >
         <div class="main-info__top">
           <div>
             <h2 class="main-info__city">{{ country }}, {{ name }}</h2>
@@ -30,7 +33,7 @@
         <div class="main-info__bottom">
           <div class="main-info__temp">{{ Math.trunc(temp) }}ºc</div>
           <a class="main-info__link" href="https://github.com/whoamizy" target="_blank">
-            <img title="whoami" class="main-info__icon" src="/whoami.jpg" alt="" />
+            <img title="whoami" class="main-info__icon" :src="`/daytime/${daytimeIcon}`" alt="" />
           </a>
         </div>
       </div>
@@ -65,7 +68,8 @@ const props = defineProps({
   }
 })
 
-const bgImage = props.isDay ? 'day.png' : 'night.png'
+const daytimeBackground = props.isDay ? 'day.png' : 'night.png'
+const daytimeIcon = props.isDay ? 'day-icon.svg' : 'night-icon.svg'
 </script>
 
 <style lang="scss" scoped>
