@@ -43,32 +43,18 @@
 </template>
 
 <script setup lang="ts">
-import type { PropType } from 'vue'
 import BaseCard from '@/components/BaseCard.vue'
 import type { Condition } from '@/types'
 
-defineProps({
-  condition: {
-    type: Object as PropType<Condition>,
-    required: true
-  },
-  feelslike: {
-    type: Number,
-    required: true
-  },
-  windspeed: {
-    type: Number,
-    required: true
-  },
-  humidity: {
-    type: Number,
-    required: true
-  },
-  uv: {
-    type: Number,
-    required: true
-  }
-})
+interface Props {
+  condition: Condition
+  feelslike: number
+  windspeed: number
+  humidity: number
+  uv: number
+}
+
+defineProps<Props>()
 </script>
 
 <style lang="scss" scoped>

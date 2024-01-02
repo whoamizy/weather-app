@@ -3,17 +3,15 @@
 </template>
 
 <script setup lang="ts">
-import type { PropType } from 'vue'
 import { useRouter } from 'vue-router'
 import type { SearchCity } from '@/types'
 import { useSearchCityStore } from '@/stores/searchCityStore'
 
-defineProps({
-  city: {
-    required: true,
-    type: Object as PropType<SearchCity>
-  }
-})
+interface Props {
+  city: SearchCity
+}
+
+defineProps<Props>()
 
 const router = useRouter()
 const searchCityStore = useSearchCityStore()
