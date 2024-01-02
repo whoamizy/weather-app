@@ -1,10 +1,12 @@
 <template>
-  <li class="item">{{ city.country }}, {{ city.name }}</li>
+  <li class="item" @click="navigateToCity(city.name)">{{ city.country }}, {{ city.name }}</li>
 </template>
 
 <script setup lang="ts">
 import type { PropType } from 'vue'
+import { useRouter } from 'vue-router'
 import type { SearchCity } from '@/types'
+import { useSearchCityStore } from '@/stores/searchCityStore'
 
 defineProps({
   city: {
@@ -12,6 +14,14 @@ defineProps({
     type: Object as PropType<SearchCity>
   }
 })
+
+const router = useRouter()
+const searchCityStore = useSearchCityStore()
+
+const navigateToCity = (cityName: string) => {
+  searchCityStore.clearCities()
+  router.push({ name: 'city', params: { name: cityName } })
+}
 </script>
 
 <style lang="scss" scoped>

@@ -28,5 +28,9 @@ export const useSearchCityStore = defineStore('search-city', () => {
     }
   }
 
-  return { cities, isLoading, getCities }
+  const clearCities = () => {
+    cities.value = []
+  }
+
+  return { cities, isLoading, getCities, clearCities }
 })
